@@ -13,8 +13,8 @@
  * by the Free Software Foundation.
  */
 
-#include <asm/asm.h>
-#include <asm/regdef.h>
+#include "asm.h"
+#include "regdef.h"
 #include "cp0regdef.h"
 #include "cacheops.h"
 #include "config.h"
