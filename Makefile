@@ -6,7 +6,6 @@
 # See /LICENSE for more information.
 #
 
-include $(TOPDIR)/rules.mk
 
 LZMA_TEXT_START	:= 0x81800000
 LOADADDR	:= 0x80060000
@@ -33,7 +32,7 @@ PKG_BUILD_DIR := $(KDIR)/$(PKG_NAME)
 
 $(PKG_BUILD_DIR)/.prepared:
 	mkdir $(PKG_BUILD_DIR)
-	$(CP) ./src/* $(PKG_BUILD_DIR)/
+	cp ./src/* $(PKG_BUILD_DIR)/
 	touch $@
 
 loader-compile: $(PKG_BUILD_DIR)/.prepared
@@ -54,10 +53,10 @@ loader.gz: $(PKG_BUILD_DIR)/loader.bin
 	dd if=$< bs=512K conv=sync | gzip -nc9 > $(LOADER_GZ)
 
 loader.elf: $(PKG_BUILD_DIR)/loader.elf
-	$(CP) $< $(LOADER_ELF)
+	cp $< $(LOADER_ELF)
 
 loader.bin: $(PKG_BUILD_DIR)/loader.bin
-	$(CP) $< $(LOADER_BIN)
+	cp $< $(LOADER_BIN)
 
 download:
 prepare: $(PKG_BUILD_DIR)/.prepared
