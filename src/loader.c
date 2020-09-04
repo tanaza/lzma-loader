@@ -220,7 +220,7 @@ void loader_main(unsigned long reg_a0, unsigned long reg_a1,
 
 	board_init();
 
-	printf("\n\nOpenWrt kernel loader for AR7XXX/AR9XXX\n");
+	printf("\n\nTanazaOS kernel loader for AR7XXX/AR9XXX\n");
 	printf("Copyright (C) 2011 Gabor Juhos <juhosg@openwrt.org>\n");
 
 	lzma_init_data();
